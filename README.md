@@ -14,6 +14,8 @@ A library that allows specification of a custom configuration system
     - It's a large scale project which will run in a distributed system,
     on multiple servers, with multiple users per server, with varying overlaps
     between configuration fields to automatically be determined by priority.
+    - Configuration is used as "local storage". In other words, a way to standardize
+    the writing of information to files which aren't used for configuration of your system.
 - Either way, not needing to be concerned about the correctness, modularity, and
 expandability of your configuration system is one less headache to worry about.
 
@@ -45,3 +47,4 @@ which include the customization of
 - Backwards compatibility with C
 - A tutorial to make various kinds of configuration systems without needing
 to look up and understand a large documentation
+- Commit granularity and asynchronous updates (Useful for multi-user/distributed system)
