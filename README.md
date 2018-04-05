@@ -19,12 +19,12 @@ A library that allows specification of a custom configuration system
 - Either way, not needing to be concerned about the correctness, modularity, and
 expandability of your configuration system is one less headache to worry about.
 
-## This is not
-- A Standalone program
-- A configuration system
+## Notice
+- This is not a Standalone program
+- This is not a configuration system
     - This allows you to make your own but doesn't provide you with
     any configuration out of the box
-- A project intended for profit
+- This is not a project intended for profit
     - I am just trying to help my and any other developers lives become a bit easier
 
 ## Planned features
