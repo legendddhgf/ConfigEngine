@@ -36,7 +36,6 @@ which include the customization of
     - Administration System Configuration
     - Multiple parameters per field, for example:
         - priority levels
-        - Accessibility permissions
     - exportability customization
 - This library also provides access to your configuration system
     - Also possible to access the configuration system without the library
