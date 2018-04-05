@@ -28,6 +28,8 @@ expandability of your configuration system is one less headache to worry about.
     - I am just trying to help my and any other developers lives become a bit easier
 
 ## Planned features
+- Multiple Configuration Profiles
+    - Nested Profiles
 - Allow Creation of Custom configuration systems through API of this library
 which include the customization of
     - Structure/Format of Configurations
