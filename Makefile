@@ -1,6 +1,6 @@
 #Makefile for ConfigEngine.cpp
 
-CPP     = g++ -std=gnu++11 -g -O0 -@all -Wextra
+CPP     = g++ -std=gnu++11 -g -O0 -Wall -Wextra
 MODULES = ConfigEngine
 HDRSRC  = ${MODULES:=.h}
 CPPSRC  = ${MODULES:=.cpp} main.cpp
