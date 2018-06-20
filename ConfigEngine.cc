@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "RocksUtil.hh"
+//#include "RocksUtil.hh"
 #include "ExtraUtil.hh"
 
 int main(int argc, char **argv) {

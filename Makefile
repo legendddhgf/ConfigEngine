@@ -1,3 +1,5 @@
+ifeq ("Comment","block")
+
 ##### ROCKSDB STUFF #####
 
 INSTALL_PATH ?= /usr/local
@@ -47,12 +49,14 @@ ROCKSDBLINKFLAGS = $(INSTALL_PATH)/lib/librocksdb.a -I$(INSTALL_PATH)/include \
 
 ##### END ROCKSDB STUFF #####
 
+endif # end comment
+
 ##### GENERAL MAKEFILE #####
 
 CPPSRCEXT = cc
 CPPHEADEXT = hh
 MAIN = ConfigEngine
-MODULES = ExtraUtil RocksUtil
+MODULES = ExtraUtil # RocksUtil
 HEADERS = $(MODULES:%=%.$(CPPHEADEXT))
 SRC = $(MAIN:%=%.$(CPPSRCEXT)) $(MODULES:%=%.$(CPPSRCEXT))
 OBJ = $(SRC:%.$(CPPSRCEXT)=%.o)
@@ -61,7 +65,7 @@ CPP = $(CXX)
 CPPCOMP = -c
 CPPLINK = -o
 CPPCOMPFLAGS = --std=c++11 -Wall -Werror -pedantic
-CPPCOMPFLAGS += -DDEBUG
+CPPCOMPFLAGS += -g -DDEBUG
 CPPCOMPFLAGS += $(ROCKSDBCOMPFLASGS)
 #CPPLINKFLAGS = -lboost_filesystem -lboost_system
 CPPLINKFLAGS += $(ROCKSDBLINKFLAGS)

@@ -1,5 +1,5 @@
-#ifndef ROCKSUTIL_H
-#define ROCKSUTIL_H
+#ifndef ROCKSUTIL_HH
+#define ROCKSUTIL_HH
 
 #include <rocksdb/db.h>
 #include <rocksdb/options.h>
