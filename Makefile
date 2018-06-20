@@ -1,11 +1,19 @@
 #Makefile for ConfigEngine.cpp
 
-CPP     = g++ -std=gnu++11 -g -O0 -Wall -Wextra
 MODULES = ConfigEngine
-HDRSRC  = ${MODULES:=.h}
-CPPSRC  = ${MODULES:=.cpp} main.cpp
-EXECBIN = ConfigEngine
-OBJECTS = ${CPPSRC:.cpp=.o}
+SOURCE  = $(MODULES).cpp
+HEADER  = $(MODULES).hpp
+OBJECTS = $(MODULES).o
+COMPILE = g++ -std=gnu++11 -g -O0 -Wall -Wextra
+LINK    = g++ -o
+REMOVE  = rm -f
 
-all : ${EXECBIN}
+ConfigEngine : $(OBJECTS)
+	$(LINK) $(OBJECTS)
+
+$(OBJECTS) : $(SOURCE)
+	$(COMPILE) $(SOURCE)
+
+clean :
+	$(REMOVE) ConfigEngine ConfigEngine.o
 

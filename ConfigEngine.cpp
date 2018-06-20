@@ -5,5 +5,5 @@
 #include "ConfigEngine.hpp" // interface for ConfigEngine necessary?
 
 int main(int argc, char **argv) {
-	printf("If only this worked already...");
+	printf("Please show me de wae ( ͡° ͜ʖ ͡°) ");
 }
