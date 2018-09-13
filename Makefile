@@ -1,19 +1,22 @@
 #Makefile for ConfigEngine.cpp
 
-MODULES = ConfigEngine
-SOURCE  = $(MODULES).cpp
-HEADER  = $(MODULES).hpp
-OBJECTS = $(MODULES).o
-COMPILE = g++ -std=gnu++11 -g -O0 -Wall -Wextra
-LINK    = g++ -o
+MODULE  = ConfigEngine
+SOURCE  = $(MODULE).cpp
+HEADER  = $(MODULE).hpp
+OBJECTS = $(MODULE).o
+COMPILE = g++ -c -g
+#COMPILE = gcc -c -std=c99 -Wall #-std=gnu++11 -g -O0 -Wall -Wextra
+LINK    = g++ -g -o
 REMOVE  = rm -f
 
-ConfigEngine : $(OBJECTS)
-	$(LINK) $(OBJECTS)
+all: $(MODULE)
+
+$(MODULE) : $(OBJECTS)
+	$(LINK) $(MODULE) $(OBJECTS)
 
 $(OBJECTS) : $(SOURCE)
 	$(COMPILE) $(SOURCE)
 
 clean :
-	$(REMOVE) ConfigEngine ConfigEngine.o
+	$(REMOVE) $(MODULE) $(OBJECTS)
 
