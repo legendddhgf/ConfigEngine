@@ -29,15 +29,48 @@ class Node {
    int n; // Current number of keys
    bool leaf; // Is true when node is leaf. Otherwise false.
 
-public:
+   public:
    Node(int _t, bool _leaf); // Constructor
 
    void insertNonFull(int k); // Node must be non-full when called
 
    void splitChild(int i, Node *y); // i is index of child array C[].
-                                    // child y must be full when called.
+   // child y must be full when called.
 
    void traverse();
 
    Node *search(int k); // returns NULL if k is not present.
-}
+
+   // Make btree friend of this so that it can access private members of the functions here.
+   friend class btree;
+};
+
+class btree {
+   Node *root;
+   int t; // min degree
+   public: // initialize tree as empty
+   btree(int _t) {
+      root = NULL;
+      t = _t;
+   }
+
+   void traverse() {
+      if (root != NULL)
+         root->traverse();
+   }
+
+   Node* search(int k) {
+      return (root == NULL) ? NULL : root-> search(k);
+   }
+
+   void insert(int k);
+};
+
+// Constructor for btreenode class
+Node:Node(int t1, bool leaf1) {
+        t = t1; // replicate vars
+        leaf = leaf1;
+        keys = new int[2*t-1]; // allocate memory for max number of possible keys
+        C = new Node *[2*t];
+        n = 0; // number of keys is zero
+     }

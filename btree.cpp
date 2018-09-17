@@ -16,10 +16,10 @@ class Node {
 
 
    public: // Make public
-   Node(int _t, bool _leaf); // purpose to underscore?
+   Node(int _t, bool _leaf); // underscore is a naming convention?
    void traverse();
    Node *search(int k); // type node, returns NULL if ke is not present
-   friend class tree; // what is a friend class?
+   friend class tree;
 };
 
 class BTree {
