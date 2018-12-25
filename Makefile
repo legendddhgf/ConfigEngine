@@ -56,7 +56,9 @@ endif # end comment
 CPPSRCEXT = cc
 CPPHEADEXT = hh
 MAIN = ConfigEngine
-MODULES = ExtraUtil # RocksUtil
+MODULES = ExtraUtil
+MODULES+= BTree
+MODULES+= # RocksUtil
 HEADERS = $(MODULES:%=%.$(CPPHEADEXT))
 SRC = $(MAIN:%=%.$(CPPSRCEXT)) $(MODULES:%=%.$(CPPSRCEXT))
 OBJ = $(SRC:%.$(CPPSRCEXT)=%.o)
@@ -68,7 +70,7 @@ CPPCOMPFLAGS = --std=c++11 -Wall -Werror -pedantic
 CPPCOMPFLAGS += -g -DDEBUG
 CPPCOMPFLAGS += $(ROCKSDBCOMPFLASGS)
 #CPPLINKFLAGS = -lboost_filesystem -lboost_system
-CPPLINKFLAGS += $(ROCKSDBLINKFLAGS)
+CPPLINKFLAGS += $(ROCKSDBLINKFLAGS) -lxxhash
 
 all: $(EXE)
 
